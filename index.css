@@ -1,0 +1,81 @@
+/* General Body Styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Dancing Script', cursive;
+    background-color: #E0F7FA; /* Backup color */
+    overflow: hidden; /* Prevent scrolling */
+}
+
+/* Blurred Background Image */
+body::before {
+    content: "";
+    background: url('./11111_.jpg') no-repeat center center/cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+/* Centered Container */
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+/* Bouquet Image Styling */
+.bouquet {
+    max-width: 90%; /* Increase max-width for larger image */
+    height: auto; /* Maintain aspect ratio */
+    border: 5px solid #BBDEFB;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 0 auto; /* Center the image horizontally */
+}
+
+
+
+/* Romantic Message Styling */
+.message {
+    margin-top: 20px;
+    font-size: 40px; /* Slightly larger font for elegance */
+    color: #07faee; /* Dark blue text */
+    font-family: 'Playfair Display', serif; /* Elegant serif font */
+    font-weight: bold;
+    text-shadow: none; /* No background effects */
+}
+
+/* Glow Animation */
+@keyframes glowText {
+    0% {
+        text-shadow: 0 0 10px #B3E5FC, 0 0 20px #82B1FF, 0 0 40px #82B1FF;
+    }
+    100% {
+        text-shadow: 0 0 20px #82B1FF, 0 0 40px #2979FF, 0 0 60px #2962FF;
+    }
+}
+
+/* Button Styling */
+#play-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1.5rem;
+    background-color: #59b2ec;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: glowText 1.5s infinite alternate;
+}
+
+#play-button:hover {
+    background-color: #0887db;
+}

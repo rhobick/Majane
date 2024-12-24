@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Christmas Gift</title>
+        <link rel="stylesheet" href="index.css">
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    </head>
+    
+    
+<body>
+    <audio id="background-music" loop>
+        <source src="Taylor Swift - Love Story (Piano Cover by Riyandi Kusuma).mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    
+    <div class="container">
+        <img src="Pastel flowers.jpg" alt="Bouquet" class="bouquet">
+        <p class="message">Happy Holidays Majane, I love you</p>
+        <button id="play-button" style="display: none;">Play Music</button>
+    </div>
+
+    <script>
+        const audio = document.getElementById('background-music');
+        const playButton = document.getElementById('play-button');
+
+        // Attempt to autoplay the audio on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            audio.play().catch(() => {
+                // If autoplay fails, show the Play button
+                playButton.style.display = 'block';
+                playButton.textContent = 'Tap to Play Music';
+            });
+        });
+
+        // Handle Play button click if autoplay fails
+        playButton.addEventListener('click', () => {
+            audio.play().then(() => {
+                playButton.style.display = 'none';
+            }).catch(error => {
+                console.error('Audio play failed:', error);
+            });
+        });
+    </script>
+</body>
+</html>
